@@ -38,6 +38,10 @@
 
 执行  systemctl restart searchd   重新启动搜索进程
 
+**Q:如何绑定多个域名？**
+
+A：在nginx.conf文件内修改，多个域名用空格隔开，修改完成后执行nginx -s reload生效
+
 **Q：如何修改站点名？**
 
 A：修改manage.py里的常量sitename
