@@ -57,6 +57,10 @@ A：修改manage.py里的常量domain
 A：修改manage.py中的以下语句中的url=后面的地址：
 admin = Admin(app,name='管理中心',base_template='admin/my_master.html',index_view=MyAdminIndexView(name='首页',template='admin/index.html',url='/fucku'))
 
+**Q：如何屏蔽违禁词**
+
+A：在sensitivewords.txt这个文件里面添加违禁词，一行一个，支持.`*?`等正则符号
+
 **Q：如何实现远程主机反向代理本机的程序？**
 
 A：修改本机的/etc/systemd/system/gunicorn.service其中的127.0.0.1:8000修改为0.0.0.0:8000然后执行systemctl daemon-reload，然后执行systemctl restart gunicorn，本机不开启nginx，远程主机开启nginx、配置反向代理、绑定域名即可，nginx的配置文件参考程序内的nginx.conf 。
