@@ -526,6 +526,12 @@ class TagsView(ModelView):
 
 
 class KeywordsView(ModelView):
+    column_labels = {
+        'keyword': u'推荐关键字',
+        'order' : u'顺序',
+        'pic':u'图片URL',
+        'score':u'评分',
+    }
     column_default_sort = ('id', True)
     column_searchable_list = ['keyword']
     create_modal = True
