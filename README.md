@@ -59,7 +59,7 @@ admin = Admin(app,name='管理中心',base_template='admin/my_master.html',index
 
 **Q：如何屏蔽违禁词**
 
-A：在sensitivewords.txt这个文件里面添加违禁词，一行一个，支持.`*?`等正则符号
+A：在sensitivewords.txt这个文件里面添加违禁词，一行一个，支持`.*?`等正则符号，添加完成后systemctl restart gunicorn生效
 
 **Q：如何实现远程主机反向代理本机的程序？**
 
