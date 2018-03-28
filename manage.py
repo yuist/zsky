@@ -413,7 +413,7 @@ def detail(info_hash):
     #hash=Search_Hash.query.filter_by(id=id).first()
     if not result:
         return redirect(url_for('index'))        
-    fenci_list=jieba.analyse.extract_tags(result['name'], 8)
+    fenci_list=jieba.analyse.extract_tags(result['name'], 4)
     tags=Search_Tags.query.order_by(Search_Tags.id.desc()).limit(20)
     form=SearchForm()
     return render_template('detail.html',form=form,tags=tags,hash=result,fenci_list=fenci_list,sitename=sitename)
