@@ -175,6 +175,10 @@ def make_cache_key(*args, **kwargs):
     args = str(hash(frozenset(request.args.items())))
     return (path + args).encode('utf-8')
 
+def replace_keyword_filter(str, old, new):
+    return re.sub(r'(?i)('+old+')', new, str)
+app.add_template_filter(replace_keyword_filter,'replace')
+
 def filelist_filter(info_hash):
     try:
         return json.loads(Search_Filelist.query.filter_by(info_hash=info_hash).first().file_list)
