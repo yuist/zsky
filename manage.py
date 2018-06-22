@@ -74,7 +74,7 @@ DB_USER='root'
 DB_PASS='123456'
 DB_CHARSET='utf8mb4'
 
-sitename="纸上烤鱼"
+sitename="有种"
 #站点名
 domain="http://116.196.82.73/"
 #sitemap里的域名
